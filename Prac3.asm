@@ -7,11 +7,24 @@
 ;------------- inicializar ------------------------------------------
 ldi R24,INIT_VALUE
 ;------------- implementar ------------------------------------------
-;call delay103uS
-;call delay1mS
+;call delay20uS
+CALL delay20uS
+
+;call delay4mS
 ;call delay1S
 ;call myRand ; Retorna valor en R25
 ;------------- ciclo principal --------------------------------------
+delay20us:
+    LDI R20, 62
+
+    next:   NOP
+            DEC R20
+            CPI R20, 0
+            BRNE next
+RET
+
+delay4ms:
+
 arriba: inc R24
 	cpi R24,10
 	breq abajo
