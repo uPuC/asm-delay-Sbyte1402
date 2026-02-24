@@ -12,10 +12,13 @@ CALL delay20uS
 
 ;call delay4mS
 CALL delay4mS
+
 ;call delay1S
+CALL delay1S
+
 ;call myRand ; Retorna valor en R25
 ;------------- ciclo principal --------------------------------------
-delay20us:
+delay20uS:
     LDI R20, 62
 
     next:   NOP
@@ -24,7 +27,7 @@ delay20us:
             BRNE next
 RET
 
-delay4ms:
+delay4mS:
     LDI R20, 90
 
     next2:  LDI R21, 101
@@ -39,7 +42,28 @@ delay4ms:
         BRNE next2
 RET
 
-delay4ms:
+delay1S:
+    LDI R20, 241
+
+    next4:  LDI R21, 144
+            NOP
+            NOP
+
+        next5:  LDI R22, 114
+                NOP
+
+            next6:  DEC R22
+                        CPI R22, 0
+                        BRNE next6
+
+                DEC R21
+                CPI R21, 0
+                BRNE next5
+
+            DEC R20
+            CPI R20, 0
+            BRNE next4
+RET
 
 arriba: inc R24
 	cpi R24,10
