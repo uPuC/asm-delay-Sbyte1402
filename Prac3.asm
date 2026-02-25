@@ -17,6 +17,12 @@ CALL delay4mS
 CALL delay1S
 
 ;call myRand ; Retorna valor en R25
+CALL myRand
+CALL myRand
+CALL myRand
+CALL myRand
+CALL myRand
+CALL myRand
 ;------------- ciclo principal --------------------------------------
 delay20uS:
     LDI R20, 62
